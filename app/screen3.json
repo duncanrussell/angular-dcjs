@@ -1,0 +1,56 @@
+{
+	"name": "Charts",
+	"id": 3,
+	"gridster": {
+		"options": {
+			"minRows": 2,
+			"maxRows": 5,
+			"columns": 3,
+			"colWidth": "auto",
+			"rowHeight": "match",
+			"margins": [20, 20],
+			"draggable": {
+				"enabled": false
+			},
+			"resizable": {
+				"enabled": false
+			}
+		},
+		"blocks": [
+			{
+				"id": "net1",
+				"gridster" : {
+					"sizeX": 3,
+					"sizeY": 1,
+					"row": 0,
+					"col": 0
+				},
+				"indexBy":{
+					"dimension": "DATETIME:date",
+					"network": "MEASURE:Networks"
+				},
+				"type":"dc-network",
+				"brush": false,
+				"dimension": {},
+				"network": {}
+			},
+			{
+				"id": "grid1",
+				"gridster" : {
+					"sizeX": 3,
+					"sizeY": 1,
+					"row": 1,
+					"col": 0
+				},
+				"indexBy":{
+					"dimension": "DATETIME:date",
+					"sum": "MEASURE:Customer Price"
+				},
+				"type":"dc-line",
+				"brush": false,
+				"dimension": {},
+				"sum": {}
+			}
+		]
+	}
+}

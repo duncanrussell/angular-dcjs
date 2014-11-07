@@ -1,6 +1,6 @@
 "use strict"
 if not dc or not d3 or not crossfilter or not _
-	throw 'You need to load Pivot'
+	throw new Error('You need to load Pivot')
 
 angular.module('PivotTable',[]).
 

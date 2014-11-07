@@ -20,7 +20,10 @@ run(($templateCache)->
     "<select ng-show='measureFilters' name='measures' ng-model='measureFilter' ng-change='setMetrics()' ng-options='item as item for item in measureFilters'>" +
     "</select>" +
     "</div>"+
-    
+    "</div>"
+
+  $templateCache.put "dc/network/template.html",
+    "<div id='{{ chartId }}' class='network-graph'>"+
     "</div>"
 
   return

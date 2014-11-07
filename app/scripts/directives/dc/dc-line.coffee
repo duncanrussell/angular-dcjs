@@ -1,6 +1,6 @@
 "use strict"
 if not dc or not d3 or not crossfilter or not _
-  throw 'You need to load DC, D3, Crossfilter and Underscore library'
+  throw new Error('You need to load DC, D3, Crossfilter and Underscore library')
 
 angular.module('dcLine',[]).
 
@@ -37,7 +37,7 @@ directive "dcLine", ()->
     )
 
     $scope.dcLine.update = ()->
-	    $scope.create()
+      $scope.create()
 
     $scope.create = ()->
       $scope.dcLineChart = dc.lineChart('#' + $scope.chartId)
@@ -55,6 +55,9 @@ directive "dcLine", ()->
         renderHorizontalGridLines(true).
         elasticY(true).
         elasticX(true).
+        title((d)->
+          return d.data.key + "  " + d.data.value
+        ).
         render()
       return
     return
